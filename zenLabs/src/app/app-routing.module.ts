@@ -7,16 +7,21 @@ import { ProcesoComponent } from './components/proceso/proceso.component'
 
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponent },
+  {path: 'zenlabs', component: HomeComponent },
   {path: 'certificaciones', component: CursosComponent },
   {path: 'aprobado', component: AprobadoComponent },
   {path: 'proceso', component: ProcesoComponent },
-  { path: '**', pathMatch: 'full', redirectTo: 'home' }
+  { path: '', pathMatch: 'full', redirectTo: 'zenlabs' }
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{
+    enableTracing: true,
+    paramsInheritanceStrategy: 'always',
+    useHash: true
+  })
+],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
