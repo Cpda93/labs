@@ -7,10 +7,11 @@ import { ProcesoComponent } from './components/proceso/proceso.component'
 
 
 const routes: Routes = [
-  {path: '', component: HomeComponent },
-  {path: 'app-cursos', component: CursosComponent },
-  {path: 'app-aprobado', component: AprobadoComponent },
-  {path: 'app-proceso', component: ProcesoComponent },
+  {path: 'home', component: HomeComponent },
+  {path: 'certificaciones', component: CursosComponent },
+  {path: 'aprobado', component: AprobadoComponent },
+  {path: 'proceso', component: ProcesoComponent },
+  { path: '**', pathMatch: 'full', redirectTo: 'home' }
 
 ];
 
